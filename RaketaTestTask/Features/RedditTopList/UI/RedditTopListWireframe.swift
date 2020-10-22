@@ -18,9 +18,13 @@ class RedditTopListWireframe {
     init() {
         
         view = RedditTopListView.instantiate()
-        let presenter = RedditTopListViewPresenter()
-        view?.presenter = presenter
-        presenter.view = view
+        do {
+            let presenter = RedditTopListViewPresenter(try Injection.global.resolve())
+            view?.presenter = presenter
+            presenter.view = view
+        } catch {
+            Utilities.Logger.log(error)
+        }
     }
 }
 

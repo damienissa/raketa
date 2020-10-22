@@ -19,7 +19,24 @@
 		156F6F6125405104009435D6 /* RedditTopListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156F6F5B25405104009435D6 /* RedditTopListWireframe.swift */; };
 		15A0472B25406FBB00400E12 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0472A25406FBB00400E12 /* FeedItem.swift */; };
 		15A0472E25406FD200400E12 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0472D25406FD200400E12 /* FeedService.swift */; };
+		15A047362540824800400E12 /* RedditTopPagingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A047352540824800400E12 /* RedditTopPagingDataSource.swift */; };
+		15A0474B254086CD00400E12 /* RedditTopPagingDataSourceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0474A254086CD00400E12 /* RedditTopPagingDataSourceTestCase.swift */; };
+		15A0485825415E7A00400E12 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0485725415E7A00400E12 /* Injection.swift */; };
+		15A04861254162E000400E12 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A04860254162E000400E12 /* Utilities.swift */; };
+		15A048652541650700400E12 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A048642541650700400E12 /* App.swift */; };
+		15A048692541655F00400E12 /* RedditTopFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A048682541655F00400E12 /* RedditTopFeedService.swift */; };
+		15A0486D25416C5300400E12 /* GlobalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A0486C25416C5300400E12 /* GlobalError.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		15A047412540869800400E12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 156F6F2A25404E1C009435D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 156F6F3125404E1C009435D6;
+			remoteInfo = RaketaTestTask;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		156F6F3225404E1C009435D6 /* RaketaTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaketaTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,10 +53,26 @@
 		156F6F5B25405104009435D6 /* RedditTopListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditTopListWireframe.swift; sourceTree = "<group>"; };
 		15A0472A25406FBB00400E12 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		15A0472D25406FD200400E12 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
+		15A047352540824800400E12 /* RedditTopPagingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditTopPagingDataSource.swift; sourceTree = "<group>"; };
+		15A0473C2540869800400E12 /* RaketaTestTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaketaTestTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		15A047402540869800400E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15A0474A254086CD00400E12 /* RedditTopPagingDataSourceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditTopPagingDataSourceTestCase.swift; sourceTree = "<group>"; };
+		15A0485725415E7A00400E12 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
+		15A04860254162E000400E12 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		15A048642541650700400E12 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		15A048682541655F00400E12 /* RedditTopFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditTopFeedService.swift; sourceTree = "<group>"; };
+		15A0486C25416C5300400E12 /* GlobalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		156F6F2F25404E1C009435D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15A047392540869800400E12 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -53,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				156F6F3425404E1C009435D6 /* RaketaTestTask */,
+				15A0473D2540869800400E12 /* RaketaTestTaskTests */,
 				156F6F3325404E1C009435D6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				156F6F3225404E1C009435D6 /* RaketaTestTask.app */,
+				15A0473C2540869800400E12 /* RaketaTestTaskTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,12 +103,15 @@
 		156F6F3425404E1C009435D6 /* RaketaTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				15A0485F2541625600400E12 /* Services */,
+				15A0485625415E5700400E12 /* DI */,
 				156F6F54254050D1009435D6 /* Features */,
 				156F6F3525404E1C009435D6 /* AppDelegate.swift */,
 				156F6F3725404E1C009435D6 /* SceneDelegate.swift */,
 				156F6F3E25404E1E009435D6 /* Assets.xcassets */,
 				156F6F4025404E1E009435D6 /* LaunchScreen.storyboard */,
 				156F6F4325404E1E009435D6 /* Info.plist */,
+				15A048642541650700400E12 /* App.swift */,
 			);
 			path = RaketaTestTask;
 			sourceTree = "<group>";
@@ -112,6 +150,7 @@
 		156F6F662540518D009435D6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				15A047342540808200400E12 /* RedditTop */,
 				15A0472D25406FD200400E12 /* FeedService.swift */,
 			);
 			path = Services;
@@ -123,6 +162,41 @@
 				15A0472A25406FBB00400E12 /* FeedItem.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		15A047342540808200400E12 /* RedditTop */ = {
+			isa = PBXGroup;
+			children = (
+				15A047352540824800400E12 /* RedditTopPagingDataSource.swift */,
+				15A048682541655F00400E12 /* RedditTopFeedService.swift */,
+			);
+			path = RedditTop;
+			sourceTree = "<group>";
+		};
+		15A0473D2540869800400E12 /* RaketaTestTaskTests */ = {
+			isa = PBXGroup;
+			children = (
+				15A047402540869800400E12 /* Info.plist */,
+				15A0474A254086CD00400E12 /* RedditTopPagingDataSourceTestCase.swift */,
+			);
+			path = RaketaTestTaskTests;
+			sourceTree = "<group>";
+		};
+		15A0485625415E5700400E12 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				15A0485725415E7A00400E12 /* Injection.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		15A0485F2541625600400E12 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				15A04860254162E000400E12 /* Utilities.swift */,
+				15A0486C25416C5300400E12 /* GlobalError.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +219,24 @@
 			productReference = 156F6F3225404E1C009435D6 /* RaketaTestTask.app */;
 			productType = "com.apple.product-type.application";
 		};
+		15A0473B2540869800400E12 /* RaketaTestTaskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15A047432540869800400E12 /* Build configuration list for PBXNativeTarget "RaketaTestTaskTests" */;
+			buildPhases = (
+				15A047382540869800400E12 /* Sources */,
+				15A047392540869800400E12 /* Frameworks */,
+				15A0473A2540869800400E12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15A047422540869800400E12 /* PBXTargetDependency */,
+			);
+			name = RaketaTestTaskTests;
+			productName = RaketaTestTaskTests;
+			productReference = 15A0473C2540869800400E12 /* RaketaTestTaskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -156,6 +248,11 @@
 				TargetAttributes = {
 					156F6F3125404E1C009435D6 = {
 						CreatedOnToolsVersion = 12.0.1;
+					};
+					15A0473B2540869800400E12 = {
+						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
+						TestTargetID = 156F6F3125404E1C009435D6;
 					};
 				};
 			};
@@ -173,6 +270,7 @@
 			projectRoot = "";
 			targets = (
 				156F6F3125404E1C009435D6 /* RaketaTestTask */,
+				15A0473B2540869800400E12 /* RaketaTestTaskTests */,
 			);
 		};
 /* End PBXProject section */
@@ -188,6 +286,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		15A0473A2540869800400E12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -195,19 +300,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15A048652541650700400E12 /* App.swift in Sources */,
+				15A047362540824800400E12 /* RedditTopPagingDataSource.swift in Sources */,
 				156F6F3625404E1C009435D6 /* AppDelegate.swift in Sources */,
 				156F6F3825404E1C009435D6 /* SceneDelegate.swift in Sources */,
 				156F6F6025405104009435D6 /* RedditTopListView.swift in Sources */,
 				156F6F5E25405104009435D6 /* RedditTopListPresenter.swift in Sources */,
 				15A0472B25406FBB00400E12 /* FeedItem.swift in Sources */,
+				15A04861254162E000400E12 /* Utilities.swift in Sources */,
 				156F6F5F25405104009435D6 /* RedditTopListModels.swift in Sources */,
 				156F6F6125405104009435D6 /* RedditTopListWireframe.swift in Sources */,
+				15A0486D25416C5300400E12 /* GlobalError.swift in Sources */,
 				156F6F5D25405104009435D6 /* RedditTopListInterfaces.swift in Sources */,
+				15A048692541655F00400E12 /* RedditTopFeedService.swift in Sources */,
 				15A0472E25406FD200400E12 /* FeedService.swift in Sources */,
+				15A0485825415E7A00400E12 /* Injection.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15A047382540869800400E12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15A0474B254086CD00400E12 /* RedditTopPagingDataSourceTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		15A047422540869800400E12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 156F6F3125404E1C009435D6 /* RaketaTestTask */;
+			targetProxy = 15A047412540869800400E12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		156F6F4025404E1E009435D6 /* LaunchScreen.storyboard */ = {
@@ -375,6 +502,49 @@
 			};
 			name = Release;
 		};
+		15A047442540869800400E12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NL53BFH4CA;
+				INFOPLIST_FILE = RaketaTestTaskTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.virych.RaketaTestTaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaketaTestTask.app/RaketaTestTask";
+			};
+			name = Debug;
+		};
+		15A047452540869800400E12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NL53BFH4CA;
+				INFOPLIST_FILE = RaketaTestTaskTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.virych.RaketaTestTaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaketaTestTask.app/RaketaTestTask";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -392,6 +562,15 @@
 			buildConfigurations = (
 				156F6F4725404E1E009435D6 /* Debug */,
 				156F6F4825404E1E009435D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15A047432540869800400E12 /* Build configuration list for PBXNativeTarget "RaketaTestTaskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15A047442540869800400E12 /* Debug */,
+				15A047452540869800400E12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -11,6 +11,12 @@ public final class RedditTopListViewPresenter {
     // MARK: - Properties
     
     public weak var view: RedditTopListViewInterface?
+    
+    private var feedService: FeedService
+    
+    init(_ feedService: FeedService) {
+        self.feedService = feedService
+    }
 }
 
 
