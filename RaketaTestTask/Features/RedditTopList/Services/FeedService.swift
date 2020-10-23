@@ -9,5 +9,5 @@ import Foundation
 
 public protocol FeedService {
     
-    func loadFeed(for page: Int, itemsPrePage count: Int, completion: @escaping (Result<[FeedItem], Error>) -> Void)
+    func loadFeed(completion: @escaping (Result<FeedResponse, Error>) -> Void)
 }

@@ -14,5 +14,5 @@ public enum RedditTopListViewState {
     
     case empty
     case loading
-    case loaded(data: RedditTopListViewData)
+    case loaded
 }

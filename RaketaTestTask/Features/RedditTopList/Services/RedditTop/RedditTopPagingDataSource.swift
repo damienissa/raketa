@@ -16,9 +16,7 @@ public class RedditTopPagingDataSource {
    
     // MARK: - Properties
     
-    private var currentPage = 0
     private var feedService: FeedService
-    private var totalItemsCount: Int?
     private var feedList: [FeedItem] = []
     
     
@@ -39,12 +37,11 @@ public class RedditTopPagingDataSource {
     
     public func loadMore() {
         
-        feedService.loadFeed(for: currentPage + 1, itemsPrePage: itemsPerPage) { [weak self] (result) in
+        feedService.loadFeed { [weak self] (result) in
             
             switch result {
             case let .success(data):
-                self?.currentPage += 1
-                self?.feedList.append(contentsOf: data)
+                self?.feedList.append(contentsOf: data.list)
                 self?.dataLoaded?()
             case let .failure(error):
                 Utilities.Logger.log(error)

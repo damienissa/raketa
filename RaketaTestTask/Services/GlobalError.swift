@@ -10,4 +10,6 @@ import Foundation
 public enum GlobalError: Error {
     
     case indexOutOfRange
+    case loadingError
+    case custom(String)
 }

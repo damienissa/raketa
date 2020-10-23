@@ -13,6 +13,7 @@ struct App {
         
         do {
             try Injection.global.register(RedditTopFeedService(), type: .interface(FeedService.self))
+            try Injection.global.register(RedditTopPagingDataSource(try Injection.global.resolve()))
         } catch {
             Utilities.Logger.log(error)
         }
