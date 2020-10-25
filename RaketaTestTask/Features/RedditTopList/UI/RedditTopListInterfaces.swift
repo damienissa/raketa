@@ -20,11 +20,10 @@ public protocol RedditTopListPresener {
     var view: RedditTopListViewInterface? { get set }
     
     func loadData()
+    func reloadData()
     
     func numberOfRows() -> Int
     func titleForRow(at index: Int) -> String
     func descrForRow(at index: Int) -> String
     func igmURL(at index: Int) -> URL?
-    func isVideo(at index: Int) -> Bool
-    func videoURL(at index: Int) -> URL?
 }

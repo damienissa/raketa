@@ -11,11 +11,12 @@ public struct FeedResponse {
     
     public let total: Int
     public let list: [FeedItem]
-
-    public init(total: Int, list: [FeedItem]) {
+    public let after: String
+    public init(total: Int, list: [FeedItem], after: String) {
         
         self.total = total
         self.list = list
+        self.after = after
     }
 }
 
@@ -27,8 +28,6 @@ public struct FeedItem {
     public let date: Date
     public let img: String?
     public let numberOfComents: Int
-    public let isVideo: Bool
-    public let videoURL: String?
 }
 
 extension FeedItem: Equatable {
@@ -37,11 +36,3 @@ extension FeedItem: Equatable {
         l.id == r.id
     }
 }
-
-
-#if DEBUG
-extension FeedItem {
-    
-    public static let demo = FeedItem(title: "Title", author: "Author", date: .init(), img: nil, numberOfComents: 300, isVideo: false, videoURL: nil)
-}
-#endif

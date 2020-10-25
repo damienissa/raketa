@@ -8,6 +8,9 @@
 
 import UIKit
 
+class LoadingCell: UITableViewCell {
+    
+}
 class ContentCell: UITableViewCell {
     
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -32,6 +35,24 @@ public final class RedditTopListView: UIViewController {
     // MARK: - Properties
     
     public var presenter: RedditTopListPresener?
+    
+    private lazy var refreshController: UIRefreshControl = {
+        let control = UIRefreshControl()
+        control.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        return control
+    }()
+    
+    
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.addSubview(refreshController)
+    }
+    
+    @objc private func refresh() {
+        
+        presenter?.reloadData()
+    }
 }
 
 
@@ -42,18 +63,25 @@ extension RedditTopListView: RedditTopListViewInterface {
     public func update(view state: RedditTopListViewState) {
         
         switch state {
-        case .loaded:
+        case let .loaded(range):
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self.tableView.beginUpdates()
+                self.tableView.insertRows(at: range.map { IndexPath(row: $0, section: 0) }, with: .fade)
+                self.tableView.endUpdates()
             }
         case .empty: return
+        case .reloaded:
+            DispatchQueue.main.async {
+                self.refreshController.endRefreshing()
+                self.tableView.reloadData()
+            }
         case .loading: return
         }
     }
 }
 
 
-extension RedditTopListView: UITableViewDataSource {
+extension RedditTopListView: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -64,11 +92,7 @@ extension RedditTopListView: UITableViewDataSource {
         
         if indexPath.row == tableView.numberOfRows(inSection: 0) - 1 {
             presenter?.loadData()
-            let cell = UITableViewCell()
-            let indicator = UIActivityIndicatorView(style: .medium)
-            indicator.center = cell.center
-            cell.addSubview(indicator)
-            indicator.startAnimating()
+            let cell: LoadingCell = tableView.cell()
             return cell
         }
         
@@ -76,18 +100,21 @@ extension RedditTopListView: UITableViewDataSource {
         if let pres = presenter {
             cell.title.text = pres.titleForRow(at: indexPath.row)
             cell.descriptionLabel.text = pres.descrForRow(at: indexPath.row)
-            if pres.isVideo(at: indexPath.row), let url = pres.videoURL(at: indexPath.row) {
-                cell.imgView?.playVideo(url)
+            cell.imgView.image = nil
+            if let url = pres.igmURL(at: indexPath.row) {
+                cell.imgView.setImage(url)
             } else {
-                if let url = pres.igmURL(at: indexPath.row) {
-                    cell.imgView.setImage(url)
-                    cell.imgView.isHidden = false
-                } else {
-                    cell.imgView.isHidden = true
-                }
+                cell.imgView.image = #imageLiteral(resourceName: "noimage")
             }
         }
         
         return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let url = presenter?.igmURL(at: indexPath.row) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }

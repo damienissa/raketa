@@ -16,13 +16,14 @@ public class RedditTopPagingDataSource {
    
     // MARK: - Properties
     
+    private var after: String = ""
     private var feedService: FeedService
     private var feedList: [FeedItem] = []
     
     
     // MARK: - Public Properties
     
-    public var dataLoaded: (() -> Void)?
+    public var dataLoaded: ((Range<Int>, Bool) -> Void)?
     
     
     // MARK: - Lifecycle
@@ -35,14 +36,23 @@ public class RedditTopPagingDataSource {
     
     // MARK: - Actions
     
+    public func reload() {
+        
+        feedList = []
+        after = ""
+        loadMore()
+    }
+    
     public func loadMore() {
         
-        feedService.loadFeed { [weak self] (result) in
+        feedService.loadFeed(after: after) { [weak self] (result) in
             
             switch result {
             case let .success(data):
                 self?.feedList.append(contentsOf: data.list)
-                self?.dataLoaded?()
+                let end = self?.feedList.count ?? 0
+                self?.after = data.after
+                self?.dataLoaded?(end - data.list.count ..< end, self?.after == "")
             case let .failure(error):
                 Utilities.Logger.log(error)
             }

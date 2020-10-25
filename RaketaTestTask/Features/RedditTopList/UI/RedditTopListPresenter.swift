@@ -18,8 +18,8 @@ public final class RedditTopListViewPresenter {
     
     init(dataSource: RedditTopPagingDataSource) {
         self.dataSource = dataSource
-        self.dataSource.dataLoaded = { [weak self] in
-            self?.view?.update(view: .loaded)
+        self.dataSource.dataLoaded = { [weak self] range, reloaded in
+            self?.view?.update(view: reloaded ? .reloaded : .loaded(range))
         }
     }
 }
@@ -28,6 +28,11 @@ public final class RedditTopListViewPresenter {
 // MARK: - RedditTopListPresener
 
 extension RedditTopListViewPresenter: RedditTopListPresener {
+    
+    public func reloadData() {
+        
+        dataSource.reload()
+    }
     
     public func numberOfRows() -> Int {
         dataSource.numberOfItems()
@@ -57,31 +62,5 @@ extension RedditTopListViewPresenter: RedditTopListPresener {
     public func loadData() {
         
         dataSource.loadMore()
-    }
-    
-    public func isVideo(at index: Int) -> Bool {
-        
-        do {
-            let item = try dataSource.item(for: index)
-            return item.isVideo
-        } catch {
-            Utilities.Logger.log(error)
-        }
-        
-        return false
-    }
-    
-    public func videoURL(at index: Int) -> URL? {
-        
-        do {
-            let item = try dataSource.item(for: index)
-            if let str = item.videoURL, let url = URL(string: str) {
-                return url
-            }
-        } catch {
-            Utilities.Logger.log(error)
-        }
-        
-        return nil
     }
 }

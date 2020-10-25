@@ -14,5 +14,6 @@ public enum RedditTopListViewState {
     
     case empty
     case loading
-    case loaded
+    case loaded(Range<Int>)
+    case reloaded
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15034CBD254403BD00238DE1 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15034CBC254403BD00238DE1 /* Cache.swift */; };
 		153C18932541FCCB007CAD94 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153C18922541FCCB007CAD94 /* ImageLoader.swift */; };
 		153C1897254206BC007CAD94 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153C1896254206BC007CAD94 /* UITableView+Ext.swift */; };
 		153C189B25420ECB007CAD94 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153C189A25420ECB007CAD94 /* Date+Ext.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15034CBC254403BD00238DE1 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		153C18922541FCCB007CAD94 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		153C1896254206BC007CAD94 /* UITableView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		153C189A25420ECB007CAD94 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15034CC625442A5700238DE1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				153C1896254206BC007CAD94 /* UITableView+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		156F6F2925404E1C009435D6 = {
 			isa = PBXGroup;
 			children = (
@@ -107,7 +117,7 @@
 		156F6F3425404E1C009435D6 /* RaketaTestTask */ = {
 			isa = PBXGroup;
 			children = (
-				153C1896254206BC007CAD94 /* UITableView+Ext.swift */,
+				15034CC625442A5700238DE1 /* Extensions */,
 				15A048642541650700400E12 /* App.swift */,
 				15A0485F2541625600400E12 /* Services */,
 				15A0485625415E5700400E12 /* DI */,
@@ -201,6 +211,7 @@
 				15A04860254162E000400E12 /* Utilities.swift */,
 				15A0486C25416C5300400E12 /* GlobalError.swift */,
 				153C18922541FCCB007CAD94 /* ImageLoader.swift */,
+				15034CBC254403BD00238DE1 /* Cache.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -317,6 +328,7 @@
 				15A0472B25406FBB00400E12 /* FeedItem.swift in Sources */,
 				153C189B25420ECB007CAD94 /* Date+Ext.swift in Sources */,
 				15A04861254162E000400E12 /* Utilities.swift in Sources */,
+				15034CBD254403BD00238DE1 /* Cache.swift in Sources */,
 				156F6F5F25405104009435D6 /* RedditTopListModels.swift in Sources */,
 				156F6F6125405104009435D6 /* RedditTopListWireframe.swift in Sources */,
 				15A0486D25416C5300400E12 /* GlobalError.swift in Sources */,
